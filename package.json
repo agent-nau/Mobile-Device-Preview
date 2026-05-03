@@ -1,0 +1,91 @@
+{
+  "name": "device-frame-preview",
+  "displayName": "Device Frame Preview",
+  "description": "Preview your web app in realistic device frames directly inside VS Code. Free, open-source, and fully local.",
+  "version": "1.0.0",
+  "publisher": "agent-nau",
+  "icon": "media/logo.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "mobile",
+    "preview",
+    "responsive",
+    "frontend",
+    "browser",
+    "debug",
+    "ui",
+    "ux",
+    "device",
+    "simulator",
+    "iphone",
+    "android",
+    "ipad"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "deviceFramePreview.openPreview",
+        "title": "Open Device Preview",
+        "category": "Device Preview",
+        "icon": "$(device-mobile)"
+      },
+      {
+        "command": "deviceFramePreview.reload",
+        "title": "Reload Preview",
+        "category": "Device Preview",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "deviceFramePreview.rotate",
+        "title": "Rotate Device",
+        "category": "Device Preview",
+        "icon": "$(screen-full)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "deviceFramePreview.openPreview",
+          "group": "navigation",
+          "when": "editorLangId == html || editorLangId == javascript || editorLangId == typescript || editorLangId == typescriptreact || editorLangId == javascriptreact || editorLangId == vue || editorLangId == svelte"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Device Frame Preview",
+      "properties": {
+        "deviceFramePreview.defaultUrl": {
+          "type": "string",
+          "default": "http://localhost:3000",
+          "description": "Default URL to load in the device preview"
+        },
+        "deviceFramePreview.defaultDevice": {
+          "type": "string",
+          "default": "iphone17promax",
+          "description": "Default device frame to use"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agent-nau/device-frame-preview"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "20.x",
+    "typescript": "^5.3.0"
+  }
+}
