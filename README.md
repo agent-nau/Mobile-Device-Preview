@@ -1,4 +1,4 @@
-# Device Frame Preview
+# Mobile Device Preview
 
 Instantly preview your web applications inside realistic mobile and tablet device frames directly within VS Code.
 
