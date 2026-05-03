@@ -1,6 +1,6 @@
 {
-  "name": "device-frame-preview",
-  "displayName": "Device Frame Preview",
+  "name": "device-preview-extension",
+  "displayName": "Mobile Device Preview",
   "description": "Preview your web app in realistic device frames directly inside VS Code. Free, open-source, and fully local.",
   "version": "1.0.0",
   "publisher": "agent-nau",
